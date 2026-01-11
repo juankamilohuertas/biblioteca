@@ -7,15 +7,15 @@ use App\Models\Libro;
 
 class LibroController extends Controller
 {
-    public function index()
+   /*  public function index()
     {
-        return view("crear_libro");
-    }
+        return view("app");
+    } */
 
     public function leerLibro()
     {
         $libros = Libro::all();
-        return view('crear_libro', compact('libros'));
+        return view('layouts/app', compact('libros'));
     }
 
     public function crearLibro(Request $request)
@@ -33,22 +33,21 @@ class LibroController extends Controller
             ->with('success', 'Libro guardado correctamente');
     }
 
-    public function editarLibro($id)
+    public function actualizarIdLibro(Request $request, $id)
     {
-        $libro = Libro::findOrFail($id);
-        return view('crear_libro', compact('libro'));
-    }
 
-    public function actualizarLibro(Request $request, $id)
-    {
-        $libro = Libro::findOrFail($id);
-
-        $libro->update([
+        $idLibro = Libro::findOrFail($id);
+        $idLibro->update([
             'nombre' => $request->nombre,
-            'author' => $request->author
+            'author'  => $request->author
         ]);
 
-        return redirect()->route('crear_libro')
-            ->with('success', 'Libro actualizado correctamente');
+        return redirect()->route('obtener.libro', ['id' => $id]);
+    }
+
+    public function eliminarLibro($id)
+    {
+        Libro::destroy($id);
+        return redirect()->route('obtener.libro', ['id' => $id]);
     }
 }
