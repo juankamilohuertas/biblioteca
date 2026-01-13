@@ -1,6 +1,6 @@
 const actualizar = document.querySelectorAll("#actualizar");
-const formularioActualizar = document.querySelector(".formularioActualizar");
-const formCrearLibro = document.querySelector("#contenedorCrearLibro");
+const contenedorActualizar = document.querySelector(".contenedorActualizar");
+const contenedorPrincipal = document.querySelector("#contenedor");
 const formularioActualizar__form = document.querySelector(
     "#formularioActualizar__form"
 );
@@ -21,22 +21,21 @@ actualizar.forEach((boton) => {
         entradasFormulario[2].value = nombre;
         entradasFormulario[3].value = author;
 
-        formularioActualizar.classList.remove("hidden");
-        formCrearLibro.classList.add("bg-gray-800");
+        contenedorActualizar.classList.remove("hidden");
+        contenedorPrincipal.classList.add("bg-gray-800");
         botonActivo = 0;
     });
 });
 
-formularioActualizar.addEventListener("click", () => {
-    formularioActualizar.classList.remove("hidden");
+contenedorActualizar.addEventListener("click", () => {
     botonActivo = 0;
 });
 
 window.addEventListener("click", () => {
     botonActivo++;
     if (botonActivo > 1) {
-        formularioActualizar.classList.add("hidden");
-        formCrearLibro.classList.remove("bg-gray-800");
+        contenedorActualizar.classList.add("hidden");
+        contenedorPrincipal.classList.remove("bg-gray-800");
     }
 });
 

@@ -2,8 +2,8 @@
      @csrf
      <!-- Nombre -->
      <div>
-         <label class="block text-sm font-medium text-gray-700">
-             Nombre
+         <label class="block text-sm font-medium">
+             Nombre del libro 
          </label>
          <input type="text" name="nombre" placeholder="Nombre del libro"
              class="mt-1 block w-full rounded-md border-gray-300 shadow-sm
@@ -12,7 +12,7 @@
 
      <!-- Autor -->
      <div>
-         <label class="block text-sm font-medium text-gray-700">
+         <label class="block text-sm font-medium">
              Autor
          </label>
          <input type="text" name="author" placeholder="Nombre del autor"

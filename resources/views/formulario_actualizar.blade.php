@@ -1,13 +1,6 @@
 <form id="formularioActualizar__form" class="max-w-md mt-10 space-y-4" method="POST" action="">
     @csrf
     @method('PUT')
-
-    <h1>
-        @if (isset($libro->id))
-            <h1>{{ $libro->id }}</h1>
-        @endif
-    </h1>
-
     <div>
         <input
             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm

@@ -7,7 +7,7 @@ use App\Models\Libro;
 
 class LibroController extends Controller
 {
-   /*  public function index()
+    /*  public function index()
     {
         return view("app");
     } */
@@ -24,6 +24,7 @@ class LibroController extends Controller
             'nombre' => 'required',
             'author'  => 'required',
         ]);
+
         Libro::create([
             'nombre' => $request->nombre,
             'author' => $request->author
