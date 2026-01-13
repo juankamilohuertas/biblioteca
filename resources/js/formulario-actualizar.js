@@ -1,4 +1,5 @@
 const actualizar = document.querySelectorAll("#actualizar");
+console.log(actualizar);
 const formularioActualizar = document.querySelector(".formularioActualizar");
 const formCrearLibro = document.querySelector("#contenedorCrearLibro");
 const formularioActualizar__form = document.querySelector(
@@ -8,10 +9,10 @@ const entradasFormulario = document.querySelectorAll(
     "#formularioActualizar__form input"
 );
 const tabla__registros = document.querySelectorAll("#tabla__registros");
-
 let botonActivo = 0;
 actualizar.forEach((boton) => {
     boton.addEventListener("click", (e) => {
+       
         const id = boton.getAttribute("data-id");
         formularioActualizar__form.action = `http://127.0.0.1:8000/libro/crear/${id}`;
 

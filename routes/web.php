@@ -6,7 +6,7 @@ use App\Http\Controllers\LibroController;
 /* Route::get('/', function () {
     return view('welcome');
 }); */
-
+Route::get('/', [LibroController::class, 'index']);
 Route::get('/libro/crear', [LibroController::class, 'leerLibro'])->name('obtener.libro');
 Route::post('/libro/crear', [LibroController::class, 'crearLibro'])->name('crear.libro');
 Route::put('/libro/crear/{id}', [LibroController::class, 'actualizarIdLibro'])->name('actualizar.libro');

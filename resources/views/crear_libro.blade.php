@@ -1,4 +1,4 @@
- <form class="max-w-md mx-auto space-y-4" action="{{ route('crear.libro') }}" method="POST">
+ <form id="FormularioCrear" class="max-w-md mx-auto space-y-4" action="{{ route('crear.libro') }}">
      @csrf
      <!-- Nombre -->
      <div>
@@ -26,5 +26,4 @@
                hover:bg-blue-700 transition">
          Guardar
      </button>
-
  </form>

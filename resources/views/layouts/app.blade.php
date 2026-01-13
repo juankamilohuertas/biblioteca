@@ -30,5 +30,4 @@
         @include('formulario_eliminar')
     </div>
 </body>
-
 </html>
